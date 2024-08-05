@@ -13,7 +13,7 @@
     <h1 class="text-center">BUSQUEDA DE DATOS DE USUARIOS</h1>
     <div class="row justify-content-center mb-3">
         <form class="col-lg-8 border bg-light p-3">
-            <input type="hidden" name="emp_codigo" id="emp_codigo">
+            <input type="hidden" name="usu_codigo" id="usu_codigo">
 
             <div class="row">
                 <div class="col mb-3">
