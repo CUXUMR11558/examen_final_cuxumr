@@ -1,5 +1,5 @@
 <?php
-require '../../models/usuarios.php';
+require '../../models/usuario.php';
 header('Content-Type: application/json; charset=UTF-8');
 
 $metodo = $_SERVER['REQUEST_METHOD'];
@@ -28,8 +28,8 @@ try {
         case 'GET':
             http_response_code(200);
             $usuario = new usuario($_GET);
-            $empleados = $usuario->buscar();
-            echo json_encode($empleados);
+            $usuarios = $usuario->buscar();
+            echo json_encode($usuarios);
             break;
         default:
             http_response_code(405);

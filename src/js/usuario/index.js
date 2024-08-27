@@ -14,7 +14,7 @@ const consultaUsuario = async (e) => {
 
     try {
         const consulta = await fetch(`https://api.github.com/users/${nombre}`, { method: 'GET' })
-        console.log(consulta);
+       console.log(consulta);
 
         if (consulta.status == 200) {
             const datos = await consulta.json()
@@ -33,7 +33,7 @@ const consultaUsuario = async (e) => {
 const consultaPaises = async () => {
     try {
         const consulta = await fetch(`https://restcountries.com/v3.1/all`)
-        console.log(consulta);
+        //console.log(consulta);
 
         if (consulta.status == 200) {
             const datos = await consulta.json()
@@ -41,7 +41,7 @@ const consultaPaises = async () => {
 
             datos.forEach(pais => {
                 const option = document.createElement('option');
-                option.value = pais.cca2
+                //option.value = pais.cca2
                 option.dataset.root = pais.idd ? pais.idd.root : ''
                 option.dataset.suffixes = pais.idd ? pais.idd.suffixes.join(', ') : ''
                 option.textContent = pais.name.common
@@ -56,8 +56,10 @@ const consultaPaises = async () => {
     }
 }
 
+
 const codigopais = (e) => {
     const selectedOption = e.target.selectedOptions[0]
+    //console.log(selectedOption)
     const root = selectedOption.dataset.root || 'Datos no disponibles'
     const suffixes = selectedOption.dataset.suffixes || ''
     document.getElementById('usu_add').value = `${root}${suffixes}`
@@ -69,7 +71,7 @@ const getUsuarios = async (alerta='si') => {
     const telefono = formulario.usu_telefono.value;
     const correo = formulario.usu_correo.value;
 
-    const url = `/examenFinalM4/controllers/usuarios/index.php?usu_nombre=${nombre}&usu_add=${codigo}&usu_telefono=${telefono}&usu_correo=${correo}`;
+    const url = `/examen_final_cuxumr1/controllers/usuario/index.php?usu_nombre=${nombre}&usu_add=${codigo}&usu_telefono=${telefono}&usu_correo=${correo}`;
     const config = {
         method: 'GET'
     }
@@ -100,7 +102,7 @@ const getUsuarios = async (alerta='si') => {
             }
 
             if (data.length > 0) {
-                data.forEach(empleado => {
+                data.forEach(usuario => {
                     const tr = document.createElement('tr')
                     const celda1 = document.createElement('td')
                     const celda2 = document.createElement('td')
@@ -109,10 +111,10 @@ const getUsuarios = async (alerta='si') => {
                     const celda5 = document.createElement('td')
 
                     celda1.innerText = contador;
-                    celda2.innerText = empleado.usu_nombre;
-                    celda3.innerText = empleado.usu_add;
-                    celda4.innerText = empleado.usu_telefono;
-                    celda5.innerText = empleado.usu_correo;
+                    celda2.innerText = usuario.usu_nombre;
+                    celda3.innerText = usuario.usu_add;
+                    celda4.innerText = usuario.usu_telefono;
+                    celda5.innerText = usuario.usu_correo;
 
                     tr.appendChild(celda1)
                     tr.appendChild(celda2)
@@ -147,7 +149,7 @@ const guardarUsuario = async (e) => {
     e.preventDefault();
     btnGuardar.disabled = true;
 
-    const url = '/examenFinalM4/controllers/usuarios/index.php'
+    const url = '/examen_final_cuxumr1/controllers/usuario/index.php'
     const formData = new FormData(formulario)
 
     formData.append('tipo', 1)

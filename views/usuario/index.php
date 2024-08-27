@@ -1,12 +1,6 @@
 <?php include_once '../../includes/header.php' ?>
 
 <?php
-// $objCliente = new Empleado();
-//     $clientes = $objCliente->buscar();
-
-//require '../../models/puesto.php';
-//$puesto = new Puesto($_GET);
-//$puestos = $puesto->buscar();
 ?>
 <br><br><br><br><br>
 <div class="container">
@@ -24,8 +18,8 @@
                         <input type="text" name="usu_nombre" id="usu_nombre">
                     </div>
                 </div>
-                 <div class="col mb-3">
-                 <label for="pais">seleccione un pais</label>
+                <div class="col mb-3">
+                    <label for="pais">seleccione un pais</label>
                     <select name="pais" id="pais" class="form-control" required>
                         <option value="">Seleccione</option>
                     </select>
@@ -46,9 +40,9 @@
                         <label for="usu_correo">CORREO ELECTRONICO</label>
                         <input type="text" name="usu_correo" id="usu_correo" class="form-control" required>
                     </div>
-                </div> 
+                </div>
 
-               
+
             </div>
 
             <div class="row justify-content-center mb-3">
@@ -66,7 +60,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8 table-responsive">
             <h2 class="text-center">DATOS GUARDADOS EN LA API</h2>
-            <table class="table table-bordered table-hover" id="tablaUsuarios">
+            <table class="table table-bordered table-hover" id="tablausuario">
                 <thead>
                     <tr>
                         <th>No.</th>
@@ -85,5 +79,5 @@
         </div>
     </div>
 </div>
-<script defer src="../../src/js/usuarios/index.js"></script>
+<script defer src="../../src/js/usuario/index.js"></script>
 <?php include_once '../../includes/footer.php' ?>
